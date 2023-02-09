@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 非知名摸鱼选手的个人博客
-subtitle: ''
-description: ''
-keywords:
-author: John Zhang
-language: en
-timezone: ''
+title: 非知名摸鱼选手的小地盘
+subtitle: 记录生活，学习和开发中的点点滴滴
+description: 主要方向是嵌入式，其他的都是随便玩玩
+keywords: 
+author: 非知名摸鱼选手
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -27,7 +27,7 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: :lang
+i18n_dir: lang
 skip_render:
 
 # Writing

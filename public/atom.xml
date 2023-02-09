@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>非知名摸鱼选手的个人博客</title>
+  <title>非知名摸鱼选手的小地盘</title>
   
-  
+  <subtitle>记录生活，学习和开发中的点点滴滴</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
@@ -10,7 +10,7 @@
   <id>http://example.com/</id>
   
   <author>
-    <name>John Zhang</name>
+    <name>非知名摸鱼选手</name>
     
   </author>
   
