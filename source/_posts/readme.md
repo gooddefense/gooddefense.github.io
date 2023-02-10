@@ -98,5 +98,5 @@ git push -u origin master
 ```
 ### 部署hexo到Github上
 
-### 用Next装饰hexo
-- 
+
+### 使用Next主题
