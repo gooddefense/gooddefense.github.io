@@ -96,8 +96,98 @@ git push -u origin master
 ```
     npm install -g hexo-cli
     hexo init blog
+    cd blog
+    npm install
 ```
-### 部署hexo到Github上
+- 测试hexo是否可以运行
+```
+    cd blog
+    hexo s
+```
+在浏览器上输入**http://localhost:4000/**，如果显示网页，则证明成功
+当然，现在这个页面只能在本地进行浏览，所以我们现在需要将hexo通过Github Pages部署到Github服务器
+### 部署hexo到Github服务器上
+1. 安装hexo-deployer-git
+```
+npm install hexo-deployer-git --save
+```
+2. 修改_config.yml (路径：/blog/_config.yml)
+```
+deploy:
+  type: git
+  repo: <repository url> #你的 【你的名字】.github.io  这一项目的git地址#
+  branch: master 
+  message: [message] #可不填写#
+```
+3. 执行命令将hexo部署到服务器上
+```
+    hexo clean
+    hexo g
+    hexo d
+```
+- 如果执行命令后出现错误，就重复执行下列语句
+```
+    npm install hexo-deployer-git --save
+```
+执行完毕后，应该就可以在**你的名字.github.io**看到你的网页了
 
+### 更新博客文章
+1. 创建新文章
+```
+    hexo new "新文章"
+```
+2. 编写文章
+这里推荐使用vscode，typora也行，但是typora需要付费
+3. 更新main分支
+```
+    hexo clean #可忽略
+    hexo generate #使刚刚完成写作的文章生成网站静态文件到默认设置的 public 文件夹
+    hexo s #启动本地服务器
+    hexo d #一键部署
+```
+4. 更新hexo分支
+```
+    git add -A （此命令用来添加所有文件到暂存区）
+    git commit -m "新增博客文章"  （此命令用来提交，双引号内可自定义内容，双引号前有空格）
+    git push origin hexo （此命令用来推送hexo分支到Github）
+    # 此条命令有时候会上传失败，可以使用下面这个命令
+    # git push origin HEAD:hexo
+```
 
-### 使用Next主题
+### 自定义你的hexo博客（持续更新）
+Hexo博客支持很多种主题，这里的话只记录Next主题的配置方法
+#### Next主题的安装和配置
+1. 在博客主目录下执行
+```
+    git clone https://github.com/theme-next/hexo-theme-next themes/next
+```
+2. 配置_config.yml文件
+```
+    theme:next
+```
+3. Next主题有几种风格：Muse、Mist、Pisces、Gemini，同样可以通过配置_config.yml来实现主题的切换
+- **注意：这里的_config.yml文件路径是在:/blog/themes/next/_config.yml**
+```
+    override：false #表示是否将主题置为默认样式
+cache:
+	enable:true #表示添加缓存功能，这样浏览器后续打开我们的博客网站会更快
+menu: #设置博客各个页面的相对路径，默认根路径是blog/source
+  home: / || home
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
+  archives: /archives/ || archive
+  #schedule: /schedule/ || calendar #日历
+  #sitemap: /sitemap.xml || sitemap #站点地图，供搜索引擎爬取
+  #commonweal: /404/ || heartbeat # 腾讯公益404
+
+# Enable/Disable menu icons / item badges.
+menu_settings:
+  icons: true # 是否显示各个页面的图标
+  badges: true # 是否显示分类/标签/归档页的内容量
+# Schemes
+scheme: Gemini
+```
+#### Next各种新鲜玩法
+目前本博客还没有加入很多的插件，这里只记录本站加入的插件的办法
+
