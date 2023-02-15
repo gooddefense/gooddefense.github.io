@@ -105,3 +105,6 @@ deploy:
   type: git
   repo: git@github.com:gooddefense/gooddefense.github.io.git
   branch: master
+
+passage_end_tag:
+  enabled: true

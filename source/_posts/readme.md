@@ -8,10 +8,41 @@ categories: Hexo
 ```
     本文记录用hexo搭建个人博客的过程和避坑指南，会持续更新和完善
 ```
+
 ## 写在前面
+### 提示
+搭建环境：macOS\
+md文件编辑器；vs code\
+如何使用markdown语言编写博客：[markdown教程](https://www.runoob.com/markdown/md-table.html)\
+博客GitHub地址：[点击跳转](https://github.com/gooddefense/gooddefense.github.io)
+
+
+### 作者想说 
 今天闲着没事干，玩了一下当下很火的CharGPT。CharGPT是一个智能聊天机器人程序，我体验了一下，基本上我问的问题，CharGPT都可以很准确的给到我答案，它也可以处理一下有难度的工作，比如写文章，写代码，处理文档等等。在这期间，我问了它一个问题，就是如何搭建个人博客，它给出的答案是用框架来搭建。我之前对这些框架的了解比较少，对这一类框架也比较好奇。为了满足自己的好奇心，我决定试一试这些博客框架。
 
 [参考链接](https://blog.csdn.net/weixin_41160054/article/details/89531921?ops_request_misc=&request_id=&biz_id=102&utm_term=mac%E4%BD%BF%E7%94%A8hexo%E2%80%94%E2%80%94script&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-89531921.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&spm=1018.2226.3001.4187)
+
+## 可能会用到的一些异常解决办法(持续更新)
+**提示：这里只记录作者在碰到此类问题时的解决办法，若以下方法没有解决问题，请自行查阅网上相关资料**
+### 输入指令后长时间没有响应
+碰到以下情况：
+- 输入指令
+```
+    git push
+    git pull
+```
+- 出现长时间无法登陆GitHub
+
+**解决办法：**
+
+刷新DNS缓存：
+在终端输入以下指令
+```
+    sudo killall -HUP mDNSResponder
+```
+
+
+
 ## 搭建过程
 ```
 我最后选择用hexo来搭建我的个人博客，至于为什么不用wordPress或者其他的，我只能说hexo打的字少，其他的字多我懒得打。
@@ -190,9 +221,35 @@ scheme: Gemini
 ```
 #### Next各种新鲜玩法
 目前本博客还没有加入很多的插件，这里只记录本站加入的插件的办法
+1. 在每篇文章末尾统一添加“本文结束”标记\
+**实现效果图:**
+![](https://blogdata-1258545379.cos.ap-shanghai.myqcloud.com/20190124/1548274181405.png)
+**实现方法：**
+1. 在路径 \themes\next\layout\_macro 中新建 passage-end-tag.swig 文件,并添加以下内容：
+```
+    <div>
+        {% if not is_index %}
+            <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+        {% endif %}
+    </div>
+```
+2. 接着打开路径\themes\next\layout\_macro\post.swig文件，在post-body 之后， post-footer 之前添加如下代码（post-footer之前两个大括号）
+```
+      {%- if not is_index %}
+        {{ partial('_macro/passage-end-tag.swig') }}
+      {%- endif %}
+```
+3. 打开初始路径下的主题配置文件_config.yml,在末尾添加以下代码：
+```
+    # 文章末尾添加“本文结束”标记
+    passage_end_tag:
+        enabled: true
+```
+完成后即可显示对应标记
 
 ## 参考链接
-[hexo博客如何写作和更新](https://blog.csdn.net/qq_51513895/article/details/120065812?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167587559916782425187391%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167587559916782425187391&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-120065812-null-null.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&utm_term=hexo%E6%9B%B4%E6%96%B0%E6%96%87%E7%AB%A0&spm=1018.2226.3001.4187)
-[hexo博客优化和美化](https://blog.csdn.net/nightmare_dimple/article/details/86661502?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167596487316782425182334%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167596487316782425182334&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-4-86661502-null-null.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&utm_term=hexo%E4%B8%BB%E9%A2%98&spm=1018.2226.3001.4187)
-[macOS刷新DNS](https://blog.csdn.net/weixin_59197425/article/details/125407632?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167580152016800211583204%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167580152016800211583204&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-125407632-null-null.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&utm_term=mac%E5%88%B7%E6%96%B0dns&spm=1018.2226.3001.4187)
-[hexo攻略添加分类和标签](https://blog.csdn.net/qq_39181839/article/details/109477607?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167600792016800184181004%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167600792016800184181004&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-109477607-null-null.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&utm_term=hexo%E5%88%86%E7%B1%BB&spm=1018.2226.3001.4187)
+[hexo博客如何写作和更新](https://blog.csdn.net/qq_51513895/article/details/120065812?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167587559916782425187391%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167587559916782425187391&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-120065812-null-null.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&utm_term=hexo%E6%9B%B4%E6%96%B0%E6%96%87%E7%AB%A0&spm=1018.2226.3001.4187)\
+[hexo博客优化和美化](https://blog.csdn.net/nightmare_dimple/article/details/86661502?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167596487316782425182334%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167596487316782425182334&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-4-86661502-null-null.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&utm_term=hexo%E4%B8%BB%E9%A2%98&spm=1018.2226.3001.4187)\
+[macOS刷新DNS](https://blog.csdn.net/weixin_59197425/article/details/125407632?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167580152016800211583204%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167580152016800211583204&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-125407632-null-null.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&utm_term=mac%E5%88%B7%E6%96%B0dns&spm=1018.2226.3001.4187)\
+[hexo攻略添加分类和标签](https://blog.csdn.net/qq_39181839/article/details/109477607?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167600792016800184181004%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167600792016800184181004&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-109477607-null-null.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&utm_term=hexo%E5%88%86%E7%B1%BB&spm=1018.2226.3001.4187)\
+[hexo美化加强版](http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html)
