@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-02-15T17:09:43.941Z</updated>
+  <updated>2023-02-15T17:13:04.581Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2023/02/15/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     <id>http://example.com/2023/02/15/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</id>
     <published>2023-02-15T15:41:45.000Z</published>
-    <updated>2023-02-15T17:09:43.941Z</updated>
+    <updated>2023-02-15T17:13:04.581Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><h2 id="2023年2月16号-更新"><a href="#2023年2月16号-更新" class="headerlink" title="2023年2月16号 更新"></a>2023年2月16号 更新</h2><p>此次更新主要是完善文章内容，添加配置<br>更新内容如下：</p><ol><li>新增更新日志</li><li>添加分类：博客介绍及更新日志</li><li>更新博客说明</li><li>更新文章：个人博客搭建教程及避坑指南</li><li>每篇文章末尾统一添加“本文结束”标记</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><h2 id="2023年2月16号-更新"><a href="#2023年2月16号-更新" class="headerlink" title="2023年2月16号 更新"></a>2023年2月16号 更新</h2><p>此次更新主要是完善文章内容，添加配置<br>更新内容如下：</p><ol><li>新增更新日志</li><li>更新博客说明</li><li>添加分类：博客介绍及更新日志</li><li>更新文章：个人博客搭建教程及避坑指南</li><li>每篇文章末尾统一添加“本文结束”标记</li></ol>]]></content>
     
     
       
