@@ -18,7 +18,7 @@ md文件编辑器；vs code\
 
 
 ### 作者想说 
-今天闲着没事干，玩了一下当下很火的CharGPT。CharGPT是一个智能聊天机器人程序，我体验了一下，基本上我问的问题，CharGPT都可以很准确的给到我答案，它也可以处理一下有难度的工作，比如写文章，写代码，处理文档等等。在这期间，我问了它一个问题，就是如何搭建个人博客，它给出的答案是用框架来搭建。我之前对这些框架的了解比较少，对这一类框架也比较好奇。为了满足自己的好奇心，我决定试一试这些博客框架。
+今天闲着没事干，玩了一下当下很火的ChatGPT。ChatGPT是一个智能聊天机器人程序，我体验了一下，基本上我问的问题，CharGPT都可以很准确的给到我答案，它也可以处理一下有难度的工作，比如写文章，写代码，处理文档等等。在这期间，我问了它一个问题，就是如何搭建个人博客，它给出的答案是用框架来搭建。我之前对这些框架的了解比较少，对这一类框架也比较好奇。为了满足自己的好奇心，我决定试一试这些博客框架。
 
 [参考链接](https://blog.csdn.net/weixin_41160054/article/details/89531921?ops_request_misc=&request_id=&biz_id=102&utm_term=mac%E4%BD%BF%E7%94%A8hexo%E2%80%94%E2%80%94script&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-89531921.142^v73^insert_down1,201^v4^add_ask,239^v1^insert_chatgpt&spm=1018.2226.3001.4187)
 
