@@ -56,7 +56,7 @@ sudo xattr -r -d com.apple.quarantine /Applications/WebStrom.app
 
  ***这里如何获取token？***
  1. 点击用户头像，点击下拉列表的Settings-设置选项
- ![](https://raw.githubusercontent.com/gooddefense/picture_bed/main/%E6%88%AA%E5%B1%8F2023-04-24%2020.07.30.png) 
+ ![xx](https://raw.githubusercontent.com/gooddefense/picture_bed/main/%E6%88%AA%E5%B1%8F2023-04-24%2020.07.30.png) 
  2. 点击左边列表的Developer settings
  ![](https://raw.githubusercontent.com/gooddefense/picture_bed/main/%E6%88%AA%E5%B1%8F2023-04-24%2020.09.16.png)
  3. 点击Personal access tokens->Tokens(classic)
