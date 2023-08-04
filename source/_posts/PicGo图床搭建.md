@@ -10,7 +10,9 @@ categories: 编程语言及工具笔记
 
 原本是打算使用Gitee作为图床仓库的，但是gitee对图床仓库做了限制，最后还是选择Github作为仓库。
 
-当然，除了Github，也可以选择其他的方式做图床仓库。（建议百度）
+当然，除了Github，也可以选择其他的方式做图床仓库。（建议百度）**（已修改，详情见细下文）**
+
+
  ## Github
  ***建议科学上网，否则网速真的很慢***
 1. 登录Github账号，点击右上角的+号
@@ -68,7 +70,7 @@ sudo xattr -r -d com.apple.quarantine /Applications/WebStrom.app
  6. 将生成的token复制粘贴到PicGo上，点击确认，即可开始使用图床
 
 
-## 测试结果
+### 测试结果
 **Github仓库截图：**
 ![Github仓库截图](https://raw.githubusercontent.com/gooddefense/picture_bed/main/%E6%88%AA%E5%B1%8F2023-04-24%2020.19.01.png)
 
@@ -76,3 +78,5 @@ sudo xattr -r -d com.apple.quarantine /Applications/WebStrom.app
 ![](https://raw.githubusercontent.com/gooddefense/picture_bed/main/%E6%88%AA%E5%B1%8F2023-04-24%2020.20.26.png)
 
 ***这样子，一个使用方便的图床就搭建好了！***
+
+## 别的方式
