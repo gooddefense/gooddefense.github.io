@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-08-04T15:49:13.637Z</updated>
+  <updated>2023-11-17T15:14:19.637Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java</title>
+    <link href="http://example.com/2023/11/17/Java/"/>
+    <id>http://example.com/2023/11/17/Java/</id>
+    <published>2023-11-17T15:10:34.000Z</published>
+    <updated>2023-11-17T15:14:19.637Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java学习笔记-amp-项目"><a href="#Java学习笔记-amp-项目" class="headerlink" title="Java学习笔记&amp;项目"></a>Java学习笔记&amp;项目</h1><h2 id="Java抽奖小网站"><a href="#Java抽奖小网站" class="headerlink" title="Java抽奖小网站"></a>Java抽奖小网站</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Java学习笔记-amp-项目&quot;&gt;&lt;a href=&quot;#Java学习笔记-amp-项目&quot; class=&quot;headerlink&quot; title=&quot;Java学习笔记&amp;amp;项目&quot;&gt;&lt;/a&gt;Java学习笔记&amp;amp;项目&lt;/h1&gt;&lt;h2 id=&quot;Java抽奖小网站&quot;&gt;&lt;a</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>项目计划</title>
@@ -204,7 +224,7 @@
     <link href="http://example.com/2023/02/15/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     <id>http://example.com/2023/02/15/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</id>
     <published>2023-02-15T15:41:45.000Z</published>
-    <updated>2023-06-14T15:52:34.268Z</updated>
+    <updated>2023-08-06T16:02:06.635Z</updated>
     
     <content type="html"><![CDATA[<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><h2 id="2023年2月16号-更新"><a href="#2023年2月16号-更新" class="headerlink" title="2023年2月16号 更新"></a>2023年2月16号 更新</h2><p>此次更新主要是完善文章内容，添加配置<br>更新内容如下：</p><ol><li>新增更新日志</li><li>更新博客说明</li><li>添加分类：博客介绍及更新日志</li><li>更新文章：个人博客搭建教程及避坑指南</li><li>每篇文章末尾统一添加“本文结束”标记</li></ol><h2 id="2023年3月7号-更新"><a href="#2023年3月7号-更新" class="headerlink" title="2023年3月7号 更新"></a>2023年3月7号 更新</h2><ol><li>简化文章结构</li><li>添加51单片机分类，Linux分类，全志h616分类<h2 id="2023年3月9号-更新"><a href="#2023年3月9号-更新" class="headerlink" title="2023年3月9号 更新"></a>2023年3月9号 更新</h2></li><li>使用新主题：Fluid</li></ol><h2 id="2023年6月13日-更新"><a href="#2023年6月13日-更新" class="headerlink" title="2023年6月13日 更新"></a>2023年6月13日 更新</h2><ol><li>修改项目计划</li><li>新增Java分类，Java分类中新增Java学习和项目笔记</li><li>更新<strong>科学上网</strong></li></ol>]]></content>
     
