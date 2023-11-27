@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-17T15:14:19.637Z</updated>
+  <updated>2023-11-27T01:30:13.491Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,21 +17,125 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>canvas</title>
+    <link href="http://example.com/2023/11/26/canvas/"/>
+    <id>http://example.com/2023/11/26/canvas/</id>
+    <published>2023-11-26T13:19:02.000Z</published>
+    <updated>2023-11-27T01:30:13.491Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h1><h2 id="什么是Canvas？"><a href="#什么是Canvas？" class="headerlink" title="什么是Canvas？"></a>什么是Canvas？</h2><p>HTML5 元素用于图形的绘制，通过<strong>脚本</strong> (通常是JavaScript)来完成.</p><p><strong>适配问题</strong><br>基本上大多数的浏览器都支持canvas元素，除了一些很老旧的版本，比如<strong>Internet Explorer 8 及更早 IE 版本的浏览器</strong>，这些浏览器是不支持canvas元素的。</p><h2 id="创建一个画布"><a href="#创建一个画布" class="headerlink" title="创建一个画布"></a>创建一个画布</h2><p>画布在网页上是一个矩形，默认条件下，画布是没有边框和内容的。因此，在设置canvas元素时，需要提前给canvas元素设置边框。</p><p>通过JavaScript设置canvas标签时，canvas标签一般都需要带一个id属性（方便引用）;通过设置<strong>width</strong>和<strong>height</strong>属性，定义画布的大小；使用style属性设置边框；</p><p>示例代码如下：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>test_demo_1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;canvas1&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;200&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;border: 1px solid #000000;&quot;</span>&gt;</span><br>    <br><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span><br></code></pre></td></tr></table></figure><h2 id="canvas绘图"><a href="#canvas绘图" class="headerlink" title="canvas绘图"></a>canvas绘图</h2><h3 id="canvas-坐标"><a href="#canvas-坐标" class="headerlink" title="canvas - 坐标"></a>canvas - 坐标</h3><p>canvas是一个二维网格，画布的左上角坐标为(0,0)。</p><p>想要使用canvas绘图，必须要使用JavaScript，canvas本身是没有绘图功能的。</p><p>JavaScript怎么使用canvas进行绘图()？</p><ul><li><p>找到canvas元素</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> c = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;canvas1&quot;</span>)<br></code></pre></td></tr></table></figure></li><li><p>创建context对象</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> ctx = c.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&quot;2d&quot;</span>)<br></code></pre></td></tr></table></figure></li><li><p>根据自己的需求，对context对象进行操作</p></li></ul><p>这里使用绘制一个矩形作为参考</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">ctx.<span class="hljs-property">fillStyle</span>=<span class="hljs-string">&quot;ff0000&quot;</span><br>ctx.<span class="hljs-title function_">fillRect</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">150</span>,<span class="hljs-number">75</span>)<br></code></pre></td></tr></table></figure><p><strong>fillStyle属性可以是CSS颜色，渐变或图案。fillStyle的默认值是#000000(黑色)</strong></p><p><strong>fillRect(x,y,width,height) 方法定义了矩形当前的填充方式</strong></p><h3 id="canvas-路径"><a href="#canvas-路径" class="headerlink" title="canvas - 路径"></a>canvas - 路径</h3><p>画线的两种方法：</p><ul><li>moveTo(x,y)  定义线条开始坐标</li><li>lineTo(x,y)  定义线条结束坐标</li></ul><p>设置完开始坐标和结束坐标后，需要加上<strong>stroke()</strong></p><p>画圆的方法：</p><ul><li>arc(x,y,r,start,stop)</li></ul><p>设置完开始坐标和结束坐标后，需要加上<strong>stroke()</strong></p><h3 id="canvas-文本"><a href="#canvas-文本" class="headerlink" title="canvas - 文本"></a>canvas - 文本</h3><p>重要属性和方法：</p><ul><li>font - 定义字体</li><li>fillText(text,x,y) - 在 canvas 上绘制实心的文本</li><li>strokeText(text,x,y) - 在 canvas 上绘制空心的文本<h3 id="canvas-渐变"><a href="#canvas-渐变" class="headerlink" title="canvas - 渐变"></a>canvas - 渐变</h3>设置渐变的两种方法：</li><li>createLinearGradient(x,y,x1,y1) - 创建线条渐变</li><li>createRadialGradient(x,y,r,x1,y1,r1) - 创建一个径向/圆渐变</li></ul><p><strong>createRadialGradient(x,y,r,x1,y1,r1)各个参数的含义：</strong></p><ul><li>x 表示渐变的开始圆的 x 坐标</li><li>y 表示渐变的开始圆的 y 坐标</li><li>r 表示开始圆的半径</li><li>x1 表示渐变的结束圆的 x 坐标</li><li>y1 表示渐变的结束圆的 y 坐标</li><li>r1 表示结束圆的半径</li></ul><p>使用渐变对象时，必须使用两种或两种以上的渐变颜色<br><strong>addColorStop()</strong> 方法指定颜色停止，参数使用坐标来描述，可以是0至1</p><h3 id="canvas-图像"><a href="#canvas-图像" class="headerlink" title="canvas - 图像"></a>canvas - 图像</h3><p>把一幅图像放置到画布上, 使用以下方法:</p><ul><li>drawImage(image,x,y)</li></ul><p>实例代码：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">//在画布上画线</span><br><span class="hljs-keyword">var</span> c =<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;canvas1&quot;</span>)<br><span class="hljs-keyword">var</span> ctx = c.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&quot;2d&quot;</span>)<br>ctx.<span class="hljs-property">fillStyle</span>=<span class="hljs-string">&quot;#FF0000&quot;</span><br>ctx.<span class="hljs-title function_">fillRect</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">100</span>)<br>ctx.<span class="hljs-title function_">moveTo</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)<br>ctx.<span class="hljs-title function_">lineTo</span>(<span class="hljs-number">200</span>,<span class="hljs-number">100</span>)<br>ctx.<span class="hljs-title function_">stroke</span>()<br><br><span class="hljs-comment">//在画布上画圆</span><br><span class="hljs-keyword">var</span> c =<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;canvas2&quot;</span>)<br><span class="hljs-keyword">var</span> ctx_2 = c.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&quot;2d&quot;</span>)<br>ctx_2.<span class="hljs-property">fillStyle</span>=<span class="hljs-string">&quot;#FF0000&quot;</span><br>ctx_2.<span class="hljs-title function_">fillRect</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">100</span>)<br>ctx_2.<span class="hljs-title function_">beginPath</span>()<br>ctx_2.<span class="hljs-title function_">arc</span>(<span class="hljs-number">95</span>,<span class="hljs-number">50</span>,<span class="hljs-number">40</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*<span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span>)<br>ctx_2.<span class="hljs-title function_">stroke</span>()<br><br><span class="hljs-comment">//在画布上写字</span><br><span class="hljs-keyword">var</span> c =<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;canvas3&quot;</span>)<br><span class="hljs-keyword">var</span> ctx_3 = c.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&quot;2d&quot;</span>)<br>ctx_3.<span class="hljs-property">font</span>=<span class="hljs-string">&quot;30px Arial&quot;</span>;<br>ctx_3.<span class="hljs-title function_">fillText</span>(<span class="hljs-string">&quot;Hello World&quot;</span>,<span class="hljs-number">10</span>,<span class="hljs-number">50</span>)<br><br><span class="hljs-comment">//在画布上实现渐变效果</span><br><span class="hljs-keyword">var</span> c =<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;canvas4&quot;</span>)<br><span class="hljs-keyword">var</span> ctx_4 = c.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&quot;2d&quot;</span>)<br><br><span class="hljs-comment">//创造gradient</span><br><span class="hljs-comment">//实现线性渐变</span><br><span class="hljs-keyword">var</span> grd = ctx_4.<span class="hljs-title function_">createLinearGradient</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">0</span>)<br><span class="hljs-comment">//实现圆形渐变</span><br><span class="hljs-comment">//var grd = ctx_4.createRadialGradient(75,50,5,90,60,100)</span><br>grd.<span class="hljs-title function_">addColorStop</span>(<span class="hljs-number">0</span>,<span class="hljs-string">&quot;red&quot;</span>)<br>grd.<span class="hljs-title function_">addColorStop</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;white&quot;</span>)<br><br><span class="hljs-comment">//将grd对象当成fillStyle覆盖整个画板</span><br>ctx_4.<span class="hljs-property">fillStyle</span> = grd<br>ctx_4.<span class="hljs-title function_">fillRect</span>(<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">150</span>,<span class="hljs-number">80</span>)<br><br><br></code></pre></td></tr></table></figure><p><a href="https://www.w3cschool.cn/htmltags/ref-canvas.html">canvas参考手册</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Canvas&quot;&gt;&lt;a href=&quot;#Canvas&quot; class=&quot;headerlink&quot; title=&quot;Canvas&quot;&gt;&lt;/a&gt;Canvas&lt;/h1&gt;&lt;h2 id=&quot;什么是Canvas？&quot;&gt;&lt;a href=&quot;#什么是Canvas？&quot; class=&quot;headerli</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mybatis</title>
+    <link href="http://example.com/2023/11/24/Mybatis/"/>
+    <id>http://example.com/2023/11/24/Mybatis/</id>
+    <published>2023-11-24T03:27:40.000Z</published>
+    <updated>2023-11-27T01:31:15.097Z</updated>
+    
+    
+    
+    
+    <category term="后端" scheme="http://example.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Redis</title>
+    <link href="http://example.com/2023/11/24/Redis/"/>
+    <id>http://example.com/2023/11/24/Redis/</id>
+    <published>2023-11-24T03:27:31.000Z</published>
+    <updated>2023-11-27T01:30:27.859Z</updated>
+    
+    
+    
+    
+    <category term="后端" scheme="http://example.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Maven</title>
+    <link href="http://example.com/2023/11/24/Maven/"/>
+    <id>http://example.com/2023/11/24/Maven/</id>
+    <published>2023-11-24T03:27:09.000Z</published>
+    <updated>2023-11-24T03:27:09.456Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot</title>
+    <link href="http://example.com/2023/11/24/SpringBoot/"/>
+    <id>http://example.com/2023/11/24/SpringBoot/</id>
+    <published>2023-11-24T03:26:56.000Z</published>
+    <updated>2023-11-27T01:31:25.622Z</updated>
+    
+    
+    
+    
+    <category term="后端" scheme="http://example.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java抽奖网站</title>
+    <link href="http://example.com/2023/11/20/Java%E6%8A%BD%E5%A5%96%E7%BD%91%E7%AB%99/"/>
+    <id>http://example.com/2023/11/20/Java%E6%8A%BD%E5%A5%96%E7%BD%91%E7%AB%99/</id>
+    <published>2023-11-20T07:23:15.000Z</published>
+    <updated>2023-11-27T01:31:00.714Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java抽奖网站-学习笔记记录"><a href="#Java抽奖网站-学习笔记记录" class="headerlink" title="Java抽奖网站(学习笔记记录)"></a>Java抽奖网站(学习笔记记录)</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p><a href="">SpringBoot</a><br><a href="">maven</a><br><a href="">Mybatis</a><br><a href="">Git</a><br><a href="">Redis</a></p><p>HTML：<a href="https://www.w3cschool.cn/html">学习网站</a><br>**canvas(HTML5)**：<a href="">学习资料</a><br>CSS：<a href="https://www.w3school.com.cn/css/index.asp">学习网站</a><br>JavaScript：</p><h2 id="TRQ"><a href="#TRQ" class="headerlink" title="TRQ"></a>TRQ</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Java抽奖网站-学习笔记记录&quot;&gt;&lt;a href=&quot;#Java抽奖网站-学习笔记记录&quot; class=&quot;headerlink&quot; title=&quot;Java抽奖网站(学习笔记记录)&quot;&gt;&lt;/a&gt;Java抽奖网站(学习笔记记录)&lt;/h1&gt;&lt;h2 id=&quot;前期准备&quot;&gt;&lt;a hr</summary>
+      
+    
+    
+    
+    <category term="前后端项目" scheme="http://example.com/categories/%E5%89%8D%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Java</title>
     <link href="http://example.com/2023/11/17/Java/"/>
     <id>http://example.com/2023/11/17/Java/</id>
     <published>2023-11-17T15:10:34.000Z</published>
-    <updated>2023-11-17T15:14:19.637Z</updated>
+    <updated>2023-11-27T01:31:59.942Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Java学习笔记-amp-项目"><a href="#Java学习笔记-amp-项目" class="headerlink" title="Java学习笔记&amp;项目"></a>Java学习笔记&amp;项目</h1><h2 id="Java抽奖小网站"><a href="#Java抽奖小网站" class="headerlink" title="Java抽奖小网站"></a>Java抽奖小网站</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="Java大纲"><a href="#Java大纲" class="headerlink" title="Java大纲"></a>Java大纲</h1><p><a href="https://sparrowzoo.feishu.cn/docs/doccnEKcUsEmfLwpnLc6WFCsU3g">https://sparrowzoo.feishu.cn/docs/doccnEKcUsEmfLwpnLc6WFCsU3g</a></p><p>密码：1#1DZ(rJ</p><h2 id="Java抽奖网站"><a href="#Java抽奖网站" class="headerlink" title="Java抽奖网站"></a>Java抽奖网站</h2><p>涉及技术栈：<br>前端：html，css，js<br>后端：springboot，maven，nginx，aliyun，ajax</p><p>项目文档：<a href="">抽奖网站</a></p><h2 id="掘金项目"><a href="#掘金项目" class="headerlink" title="掘金项目"></a>掘金项目</h2><p>涉及技术栈：<br>前端：<br>后端：</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;Java学习笔记-amp-项目&quot;&gt;&lt;a href=&quot;#Java学习笔记-amp-项目&quot; class=&quot;headerlink&quot; title=&quot;Java学习笔记&amp;amp;项目&quot;&gt;&lt;/a&gt;Java学习笔记&amp;amp;项目&lt;/h1&gt;&lt;h2 id=&quot;Java抽奖小网站&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h1 id=&quot;Java大纲&quot;&gt;&lt;a href=&quot;#Java大纲&quot; class=&quot;headerlink&quot; title=&quot;Java大纲&quot;&gt;&lt;/a&gt;Java大纲&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://sparrowzoo.feishu.cn/docs/doccnEKcUsE</summary>
       
     
     
+    
+    <category term="编程语言及工具" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%8A%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
