@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>蓝牙Wi-Fi助手</title>
+    <link href="/2023/11/29/%E8%93%9D%E7%89%99Wi-Fi%E5%8A%A9%E6%89%8B/"/>
+    <url>/2023/11/29/%E8%93%9D%E7%89%99Wi-Fi%E5%8A%A9%E6%89%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="蓝牙Wi-Fi助手"><a href="#蓝牙Wi-Fi助手" class="headerlink" title="蓝牙Wi-Fi助手"></a>蓝牙Wi-Fi助手</h1><h2 id="Android-APP如何和硬件进行通信？"><a href="#Android-APP如何和硬件进行通信？" class="headerlink" title="Android APP如何和硬件进行通信？"></a>Android APP如何和硬件进行通信？</h2><p>开发板搭配蓝牙模块或者WI-FI模块。</p><p>WI-FI模块常用型号：ESP8266<br>蓝牙模块常用型号：HC08</p><p><strong>esp8266的三种工作模式：</strong></p><ol><li>station（客户端模式）：类似于手机，小爱音响等设备（client）</li><li>AP（接入点模式）：类似于路由器(server)，可以让其他设备访问</li><li>station+AP（客户端+接入点模式）</li></ol><p><strong>使用手机APP连接WI-FI模块控制单片机硬件的逻辑：</strong><br>将WiFi模块设置成了AP模式下的TCP Server模式，就相当于一个路由器，并配置好WiFi模块的IP地址和端口号，就可以通过手机APP连接这个WiFi模块，并相互传输数据，进而就可以控制单片机所连接的硬件设备，实现简易物联网的功能</p><p><strong>使用手机APP连接蓝牙模块控制单片机硬件的逻辑：</strong><br><img src="https://img-blog.csdnimg.cn/45db4cbceee945de801785b487aeae66.png" alt="蓝牙连接逻辑图"></p><h2 id="逻辑设计"><a href="#逻辑设计" class="headerlink" title="逻辑设计"></a>逻辑设计</h2><h3 id="主界面"><a href="#主界面" class="headerlink" title="主界面"></a>主界面</h3><p>可选<strong>WI-FI</strong>模式和<strong>蓝牙</strong>模式</p><p>WI-FI模式下端口号和IP地址输入的审核逻辑：</p><ol><li>若端口号和IP地址输入为空，则提示对应异常</li><li>输入端口号和IP地址后，开始进行连接，连接成功直接跳转到操作界面；连接失败则停留在主界面，并报错</li></ol><p>蓝牙模式下的操作逻辑：<br>搜索按钮直接显示附近的蓝牙信号源，点击后尝试连接，连接成功直接跳转到操作界面；连接失败则停留在主界面，并报错</p><h3 id="操作界面"><a href="#操作界面" class="headerlink" title="操作界面"></a>操作界面</h3><ol><li>显示当前连接的IP地址/蓝牙名称</li><li>提供两个输入框，一个可以直接输入AT指令，一个可以选择单片机操作模型。</li><li>返回值显示框</li></ol><h2 id="Android-APP-WI-FI部分实现"><a href="#Android-APP-WI-FI部分实现" class="headerlink" title="Android APP WI-FI部分实现"></a>Android APP WI-FI部分实现</h2><p>引用：<br><a href="https://blog.csdn.net/qq_38436214/article/details/128786627?ops_request_misc=&request_id=&biz_id=102&utm_term=Android%20APP%E8%BF%9E%E6%8E%A5WI-FI&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-128786627.142%5Ev96%5Epc_search_result_base5&spm=1018.2226.3001.4187">AndroidWIFI使用简述</a> —-（xml配置比较详细）<br><a href="https://blog.csdn.net/qq_45488746/article/details/124730926?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170127665016800227444165%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=170127665016800227444165&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-124730926-null-null.142%5Ev96%5Epc_search_result_base5&utm_term=Android%20APP%E5%90%91esp8266%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE&spm=1018.2226.3001.4187">APP和ESP8266进行联网传输</a>–(xml只配置了网络)<br><strong>配置项目的静态权限</strong><br>在 <strong>AndroidManifest.xml</strong> 增加代码</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.INTERNET&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CHANGE_NETWORK_STATE&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CHANGE_WIFI_STATE&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_WIFI_STATE&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure><p>在Android13大版本更新后，Google 将 Wi-Fi 扫描与位置相关内容分离， Android 13 为管理设备与周围 Wi-Fi 热点连接的应用添加 NEARBY_WIFI_DEVICES 运行时权限 (属于NEARBY_DEVICES权限组)，从而在不需要 ACCESS_FINE_LOCATION 权限的情况下，也可以让应用访问附近的 Wi-Fi 设备。</p><p>但为了考虑Android13版本以下的机型，所以项目中仍然需要配置定位权限。</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml">    <span class="hljs-comment">&lt;!--Android 6 ~ 12 使用定位权限--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_FINE_LOCATION&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">tools:ignore</span>=<span class="hljs-string">&quot;CoarseFineLocation&quot;</span> /&gt;</span><br><br><span class="hljs-comment">&lt;!--Android 13及以上使用权限--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.NEARBY_WIFI_DEVICES&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:usesPermissionFlags</span>=<span class="hljs-string">&quot;neverForLocation&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">tools:targetApi</span>=<span class="hljs-string">&quot;Tiramisu&quot;</span> /&gt;</span><br><br></code></pre></td></tr></table></figure><h2 id="Android-Studio安装-mac"><a href="#Android-Studio安装-mac" class="headerlink" title="Android Studio安装(mac)"></a>Android Studio安装(mac)</h2><p><a href="https://blog.csdn.net/ChenYu_2511/article/details/129316950?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170127730316800215062578%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170127730316800215062578&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-129316950-null-null.142%5Ev96%5Epc_search_result_base5&utm_term=mac%20M2%E5%AE%89%E8%A3%85Android%20Studio&spm=1018.2226.3001.4187">参考文章</a></p><p><a href="https://blog.csdn.net/qq_38091632/article/details/132174988?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170127730316800215062578%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170127730316800215062578&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-132174988-null-null.142%5Ev96%5Epc_search_result_base5&utm_term=mac%20M2%E5%AE%89%E8%A3%85Android%20Studio&spm=1018.2226.3001.4187">参考文章2</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>APP &amp; 小程序</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Android APP项目</title>
+    <link href="/2023/11/29/Android-APP/"/>
+    <url>/2023/11/29/Android-APP/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Android-APP"><a href="#Android-APP" class="headerlink" title="Android APP"></a>Android APP</h1><h2 id="蓝牙Wi-Fi助手"><a href="#蓝牙Wi-Fi助手" class="headerlink" title="蓝牙Wi-Fi助手"></a>蓝牙Wi-Fi助手</h2><p><strong>项目状态：未完成</strong></p><p><a href="">开发文档</a></p><p><a href="">代码仓库</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>APP &amp; 小程序</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>canvas</title>
     <link href="/2023/11/26/canvas/"/>
     <url>/2023/11/26/canvas/</url>
@@ -65,8 +103,14 @@
     <link href="/2023/11/24/Maven/"/>
     <url>/2023/11/24/Maven/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="Maven简介"><a href="#Maven简介" class="headerlink" title="Maven简介"></a>Maven简介</h2><p>Maven是一个项目管理工具。它可以帮助程序员构建工程，管理jar包，编译代码，完成测试，项目打包等等。</p><p><strong>maven的作用</strong></p><ul><li>一键构建<br>  构建的过程：编译-测试-运行-打包-安装-部署等</li><li>依赖管理<br>  maven工程中不直接将jar包导入到工程中，而是有一个专门存放jar包的仓库，仓库中的每个jar包都有自己的坐标。maven工程中只要配置jar包坐标即可，运行项目需要使用jar包时，根据坐标即可从maven仓库中拿到jar包即可运行。</li></ul><h2 id="下载和配置Maven"><a href="#下载和配置Maven" class="headerlink" title="下载和配置Maven"></a>下载和配置Maven</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p><strong><a href="https://maven.apache.org/download.cgi">maven下载链接</a></strong></p><p><strong>文件名后缀为bin.tar.gz</strong></p><h3 id="配置maven-home环境变量"><a href="#配置maven-home环境变量" class="headerlink" title="配置maven_home环境变量"></a>配置maven_home环境变量</h3><p>这里只写了mac的实例(windows的自行搜索)：</p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Makefile">    <br></code></pre></td></tr></table></figure>]]></content>
     
+    
+    <categories>
+      
+      <category>后端</category>
+      
+    </categories>
     
     
   </entry>
@@ -97,7 +141,7 @@
     <link href="/2023/11/20/Java%E6%8A%BD%E5%A5%96%E7%BD%91%E7%AB%99/"/>
     <url>/2023/11/20/Java%E6%8A%BD%E5%A5%96%E7%BD%91%E7%AB%99/</url>
     
-    <content type="html"><![CDATA[<h1 id="Java抽奖网站-学习笔记记录"><a href="#Java抽奖网站-学习笔记记录" class="headerlink" title="Java抽奖网站(学习笔记记录)"></a>Java抽奖网站(学习笔记记录)</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p><a href="">SpringBoot</a><br><a href="">maven</a><br><a href="">Mybatis</a><br><a href="">Git</a><br><a href="">Redis</a></p><p>HTML：<a href="https://www.w3cschool.cn/html">学习网站</a><br>**canvas(HTML5)**：<a href="">学习资料</a><br>CSS：<a href="https://www.w3school.com.cn/css/index.asp">学习网站</a><br>JavaScript：</p><h2 id="TRQ"><a href="#TRQ" class="headerlink" title="TRQ"></a>TRQ</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="Java抽奖网站-学习笔记记录"><a href="#Java抽奖网站-学习笔记记录" class="headerlink" title="Java抽奖网站(学习笔记记录)"></a>Java抽奖网站(学习笔记记录)</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><p><a href="https://gooddefense.github.io/2023/11/24/SpringBoot/">SpringBoot</a><br><a href="https://gooddefense.github.io/2023/11/24/Maven/">maven</a><br><a href="https://gooddefense.github.io/2023/11/24/Mybatis/">Mybatis</a><br><a href="https://gooddefense.github.io/2023/04/08/git/">Git</a><br><a href="https://gooddefense.github.io/2023/11/24/Redis/">Redis</a></p><h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><ul><li>HTML：<a href="https://www.w3cschool.cn/html">学习网站</a><ul><li>**canvas(HTML5)**：<a href="https://gooddefense.github.io/2023/11/26/canvas/">学习资料</a></li></ul></li><li>CSS：<a href="https://www.w3school.com.cn/css/index.asp">学习网站</a></li><li>JavaScript：<a href="">学习网站</a></li></ul>]]></content>
     
     
     <categories>
@@ -290,11 +334,11 @@
   
   
   <entry>
-    <title>更新日志</title>
+    <title>学习日志</title>
     <link href="/2023/02/15/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     <url>/2023/02/15/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
     
-    <content type="html"><![CDATA[<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><h2 id="2023年2月16号-更新"><a href="#2023年2月16号-更新" class="headerlink" title="2023年2月16号 更新"></a>2023年2月16号 更新</h2><p>此次更新主要是完善文章内容，添加配置<br>更新内容如下：</p><ol><li>新增更新日志</li><li>更新博客说明</li><li>添加分类：博客介绍及更新日志</li><li>更新文章：个人博客搭建教程及避坑指南</li><li>每篇文章末尾统一添加“本文结束”标记</li></ol><h2 id="2023年3月7号-更新"><a href="#2023年3月7号-更新" class="headerlink" title="2023年3月7号 更新"></a>2023年3月7号 更新</h2><ol><li>简化文章结构</li><li>添加51单片机分类，Linux分类，全志h616分类<h2 id="2023年3月9号-更新"><a href="#2023年3月9号-更新" class="headerlink" title="2023年3月9号 更新"></a>2023年3月9号 更新</h2></li><li>使用新主题：Fluid</li></ol><h2 id="2023年6月13日-更新"><a href="#2023年6月13日-更新" class="headerlink" title="2023年6月13日 更新"></a>2023年6月13日 更新</h2><ol><li>修改项目计划</li><li>新增Java分类，Java分类中新增Java学习和项目笔记</li><li>更新<strong>科学上网</strong></li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><h2 id="2023年12月24日"><a href="#2023年12月24日" class="headerlink" title="2023年12月24日"></a>2023年12月24日</h2><p>完成任务：<br>    1. Github加速<br>    2. 在Mac电脑上跑通Git<br>    3. 继续完善Java入门项目：抽奖网站</p>]]></content>
     
     
     <categories>
