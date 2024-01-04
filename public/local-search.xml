@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>C++ QT</title>
+    <link href="/2024/01/05/C-QT/"/>
+    <url>/2024/01/05/C-QT/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2024/01/04/hello-world/"/>
+    <url>/2024/01/04/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>蓝牙Wi-Fi助手</title>
     <link href="/2023/11/29/%E8%93%9D%E7%89%99Wi-Fi%E5%8A%A9%E6%89%8B/"/>
     <url>/2023/11/29/%E8%93%9D%E7%89%99Wi-Fi%E5%8A%A9%E6%89%8B/</url>
@@ -179,7 +205,7 @@
     <link href="/2023/05/06/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/"/>
     <url>/2023/05/06/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/</url>
     
-    <content type="html"><![CDATA[<h1 id="2023暑假项目列表"><a href="#2023暑假项目列表" class="headerlink" title="2023暑假项目列表"></a>2023暑假项目列表</h1><h2 id="C语言版贪吃蛇游戏"><a href="#C语言版贪吃蛇游戏" class="headerlink" title="C语言版贪吃蛇游戏"></a>C语言版贪吃蛇游戏</h2><h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>未完成</p><h3 id="项目文档"><a href="#项目文档" class="headerlink" title="项目文档"></a>项目文档</h3><p><a href="">点击此处跳转至该项目文档</a></p><h3 id="项目源码地址"><a href="#项目源码地址" class="headerlink" title="项目源码地址"></a>项目源码地址</h3><p><a href="">点击此处跳转至该项目仓库</a></p><h2 id="基于STM32的智能宠物喂食系统"><a href="#基于STM32的智能宠物喂食系统" class="headerlink" title="基于STM32的智能宠物喂食系统"></a>基于STM32的智能宠物喂食系统</h2><h3 id="状态-1"><a href="#状态-1" class="headerlink" title="状态"></a>状态</h3><p>未完成</p><h3 id="项目文档-1"><a href="#项目文档-1" class="headerlink" title="项目文档"></a>项目文档</h3><p><a href="">点击此处跳转至该项目文档</a></p><h3 id="项目源码地址-1"><a href="#项目源码地址-1" class="headerlink" title="项目源码地址"></a>项目源码地址</h3><p><a href="">点击此处跳转至该项目仓库</a></p><h2 id="基于STM32的智能小车"><a href="#基于STM32的智能小车" class="headerlink" title="基于STM32的智能小车"></a>基于STM32的智能小车</h2><h3 id="状态-2"><a href="#状态-2" class="headerlink" title="状态"></a>状态</h3><p>未完成</p><h3 id="项目文档-2"><a href="#项目文档-2" class="headerlink" title="项目文档"></a>项目文档</h3><p><a href="">点击此处跳转至该项目文档</a></p><h3 id="项目源码地址-2"><a href="#项目源码地址-2" class="headerlink" title="项目源码地址"></a>项目源码地址</h3><p><a href="">点击此处跳转至该项目仓库</a></p><h2 id="基于ARM-Linux的项目（待定）"><a href="#基于ARM-Linux的项目（待定）" class="headerlink" title="基于ARM+Linux的项目（待定）"></a>基于ARM+Linux的项目（待定）</h2><h3 id="状态-3"><a href="#状态-3" class="headerlink" title="状态"></a>状态</h3><p>未完成</p><h3 id="项目文档-3"><a href="#项目文档-3" class="headerlink" title="项目文档"></a>项目文档</h3><p><a href="">点击此处跳转至该项目文档</a></p><h3 id="项目源码地址-3"><a href="#项目源码地址-3" class="headerlink" title="项目源码地址"></a>项目源码地址</h3><p><a href="">点击此处跳转至该项目仓库</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="2024寒假项目列表"><a href="#2024寒假项目列表" class="headerlink" title="2024寒假项目列表"></a>2024寒假项目列表</h1><h2 id="C语言版贪吃蛇游戏"><a href="#C语言版贪吃蛇游戏" class="headerlink" title="C语言版贪吃蛇游戏"></a>C语言版贪吃蛇游戏</h2><h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>未完成</p><h3 id="项目文档"><a href="#项目文档" class="headerlink" title="项目文档"></a>项目文档</h3><p><a href="">点击此处跳转至该项目文档</a></p><h3 id="项目源码地址"><a href="#项目源码地址" class="headerlink" title="项目源码地址"></a>项目源码地址</h3><p><a href="">点击此处跳转至该项目仓库</a></p><h2 id="基于STM32的智能宠物喂食系统"><a href="#基于STM32的智能宠物喂食系统" class="headerlink" title="基于STM32的智能宠物喂食系统"></a>基于STM32的智能宠物喂食系统</h2><h3 id="状态-1"><a href="#状态-1" class="headerlink" title="状态"></a>状态</h3><p>未完成</p><h3 id="项目文档-1"><a href="#项目文档-1" class="headerlink" title="项目文档"></a>项目文档</h3><p><a href="">点击此处跳转至该项目文档</a></p><h3 id="项目源码地址-1"><a href="#项目源码地址-1" class="headerlink" title="项目源码地址"></a>项目源码地址</h3><p><a href="">点击此处跳转至该项目仓库</a></p><h2 id="基于STM32的智能小车"><a href="#基于STM32的智能小车" class="headerlink" title="基于STM32的智能小车"></a>基于STM32的智能小车</h2><h3 id="状态-2"><a href="#状态-2" class="headerlink" title="状态"></a>状态</h3><p>未完成</p><h3 id="项目文档-2"><a href="#项目文档-2" class="headerlink" title="项目文档"></a>项目文档</h3><p><a href="">点击此处跳转至该项目文档</a></p><h3 id="项目源码地址-2"><a href="#项目源码地址-2" class="headerlink" title="项目源码地址"></a>项目源码地址</h3><p><a href="">点击此处跳转至该项目仓库</a></p><h2 id="基于ARM-Linux的项目（待定）"><a href="#基于ARM-Linux的项目（待定）" class="headerlink" title="基于ARM+Linux的项目（待定）"></a>基于ARM+Linux的项目（待定）</h2><h3 id="状态-3"><a href="#状态-3" class="headerlink" title="状态"></a>状态</h3><p>未完成</p><h3 id="项目文档-3"><a href="#项目文档-3" class="headerlink" title="项目文档"></a>项目文档</h3><p><a href="">点击此处跳转至该项目文档</a></p><h3 id="项目源码地址-3"><a href="#项目源码地址-3" class="headerlink" title="项目源码地址"></a>项目源码地址</h3><p><a href="">点击此处跳转至该项目仓库</a></p>]]></content>
     
     
     <categories>
@@ -384,19 +410,6 @@
       <category>Hexo</category>
       
     </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2023/02/08/hello-world/"/>
-    <url>/2023/02/08/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
     
     
   </entry>
